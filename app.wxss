@@ -1,0 +1,71 @@
+/* ====================================
+   全局样式
+   主色：深灰 #1a1a2e / 蓝 #4a90d9
+   ==================================== */
+
+/* 页面容器 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background-color: #f5f5f5;
+  color: #1a1a2e;
+  font-size: 28rpx;
+  line-height: 1.6;
+}
+
+/* 安全区域 */
+.container {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 链接色 */
+.blue {
+  color: #4a90d9;
+}
+
+/* 通用按钮 */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #4a90d9;
+  color: #fff;
+}
+
+.btn-primary:active {
+  background-color: #3a7bc8;
+}
+
+.btn-primary[disabled] {
+  background-color: #b0cceb;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200rpx;
+  color: #999;
+}
+
+.empty-state .icon {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 32rpx;
+  opacity: 0.4;
+}
+
+.empty-state .text {
+  font-size: 28rpx;
+  color: #aaa;
+}

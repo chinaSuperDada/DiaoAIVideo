@@ -1,0 +1,22 @@
+<!-- pages/upload/upload.wxml - 上传照片页 -->
+<view class="container">
+  <!-- 选择照片区域 -->
+  <view class="picker-area" bindtap="chooseImage" wx:if="{{!previewSrc}}">
+    <view class="picker-icon">📷</view>
+    <text class="picker-text">点击选择照片</text>
+    <text class="picker-hint">支持 JPG / PNG</text>
+  </view>
+
+  <!-- 预览区域 -->
+  <view class="preview-area" wx:if="{{previewSrc}}">
+    <image class="preview-image" src="{{previewSrc}}" mode="aspectFit" />
+    <view class="rechoose" bindtap="chooseImage">重新选择</view>
+  </view>
+
+  <!-- 上传按钮 -->
+  <view class="action-area" wx:if="{{previewSrc}}">
+    <button class="btn btn-primary upload-btn" bindtap="doUpload" disabled="{{uploading}}" loading="{{uploading}}">
+      {{uploading ? '上传中…' : '上传照片'}}
+    </button>
+  </view>
+</view>

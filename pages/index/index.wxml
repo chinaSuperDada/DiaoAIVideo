@@ -1,0 +1,42 @@
+<!-- pages/index/index.wxml - 照片墙首页 -->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="title">我的照片</view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{photos.length === 0 && !loading}}">
+    <image class="icon" src="/images/empty-photo.svg" mode="aspectFit" />
+    <text class="text">还没有照片，去上传一张吧</text>
+  </view>
+
+  <!-- 照片网格 -->
+  <view class="grid" wx:else>
+    <view
+      class="grid-item"
+      wx:for="{{photos}}"
+      wx:key="_id"
+      bindtap="onPreview"
+      data-url="{{item.tempUrl}}"
+      data-urls="{{photoUrls}}"
+    >
+      <image
+        class="photo"
+        src="{{item.tempUrl}}"
+        mode="aspectFill"
+        lazy-load
+      />
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-msg" wx:if="{{loading}}">
+    <text>加载中…</text>
+  </view>
+
+  <!-- 底部上传按钮 -->
+  <view class="fab" bindtap="goUpload">
+    <text class="fab-icon">+</text>
+  </view>
+</view>
