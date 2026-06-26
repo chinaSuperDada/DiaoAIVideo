@@ -1,0 +1,10 @@
+# WeChat DevTools personal config — auto-generated, should not be shared
+project.private.config.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
